@@ -20,7 +20,7 @@ const App = () => {
 
   const getItems = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8000/details');
+      const { data } = await axios.get('https://magisk-todo-backend.herokuapp.com/details');
       const tasks = data.map((ele) => {
         const task = ele;
         return task;
@@ -38,7 +38,7 @@ const App = () => {
           // id: Math.floor(Math.random() * 1000000000000),
           task: inputList
         }
-        const addTask = await axios.post('http://localhost:8000/add', body);
+        const addTask = await axios.post('https://magisk-todo-backend.herokuapp.com/add', body);
         setInputList("");
       } catch (e) {
         console.error(e)
@@ -53,7 +53,7 @@ const App = () => {
     // }
     // console.log(_id);
     try {
-      const delTask = await axios.delete('http://localhost:8000/del', { data: { _id } });
+      const delTask = await axios.delete('https://magisk-todo-backend.herokuapp.com/del', { data: { _id } });
     } catch (e) {
       console.error(e)
     }
@@ -73,7 +73,7 @@ const App = () => {
       task: inputList
     }
     try {
-      const editTask = await axios.patch('http://localhost:8000/edit', body);
+      const editTask = await axios.patch('https://magisk-todo-backend.herokuapp.com/edit', body);
     } catch (e) {
       console.error(e)
     }
