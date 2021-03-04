@@ -20,8 +20,8 @@
 }
 
 .center_div {
-  width: 30%;
-  height: 80vh;
+  width: 35%;
+  height: 90vh;
   background-color: #f4f4f4;
   box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
@@ -49,6 +49,10 @@ input {
   outline: none;
 }
 
+/* .editTodo {
+  margin-left: 20px;
+} */
+
 button {
   min-height: 40px;
   width: 40px;
@@ -64,7 +68,8 @@ button {
 }
 
 button:hover {
-  background-color: green;
+  background-color: rgb(13, 169, 180);
+  cursor: pointer;
 }
 
 ol {
@@ -72,6 +77,9 @@ ol {
 }
 
 ol li {
+  margin-top: 5px;
+  margin-right: 5px;
+  /* margin-left: 10px; */
   padding-left: 0px;
   text-align: left;
   font-size: 20px;
@@ -80,7 +88,15 @@ ol li {
   display: flex;
   align-items: center;
   color: #8566bb;
-  text-transform: capitalize;
+  text-transform:initial;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-left: 130px;
 }
 
 .todo_style {
@@ -90,8 +106,8 @@ ol li {
   align-items: center;
 }
 
-.todo_style .fa-times {
-  width: 20px;
+.fa-times {
+  min-width: 20px;
   height: 20px;
   display: flex;
   justify-content: center;
@@ -104,22 +120,26 @@ ol li {
   text-align: left;
 }
 
-.todo_style .fa-undo{
+.fa-undo{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   min-height: 40px;
   width: 40px;
   border-radius: 50%;
   border-color: transparent;
   background-color: #8566bb;
   color: whitesmoke;
-  font-size: 30px;
+  font-size: 20px;
   border: none;
   outline: none;
-  margin-left: 2px;
+  margin-left: 8px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.4);
 }
 
-.todo_style .fa-undo:hover{
-  background-color: green
+.fa-undo:hover {
+  background-color: rgb(13, 169, 180);
+  cursor: pointer;
 }
 
 .todo_style .fa-times:hover {
@@ -130,7 +150,7 @@ ol li {
 } */
 
 .todo_style .fa-edit {
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   display: flex;
   justify-content: center;

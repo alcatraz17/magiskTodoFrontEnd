@@ -34,17 +34,21 @@ const App = () => {
 
   const postItem = async () => {
     try {
-        const body = {
-          // id: Math.floor(Math.random() * 1000000000000),
-          task: inputList
-        }
+      const body = {
+        task: inputList
+      }
+      if (!inputList || /^\s*$/.test(inputList)) {
+        setInputList("")
+        return alert("Task can not be empty!");
+      } else {
         const addTask = await axios.post('https://magisk-todo-backend.herokuapp.com/add', body);
         setInputList("");
-      } catch (e) {
-        console.error(e)
-      };
+      }
+    } catch (e) {
+      console.error(e)
+    };
     getItems();
-    }
+  }
 
 
   const deleteItem = async (_id) => {
@@ -72,12 +76,19 @@ const App = () => {
       _id: editableId,
       task: inputList
     }
-    try {
-      const editTask = await axios.patch('https://magisk-todo-backend.herokuapp.com/edit', body);
-    } catch (e) {
-      console.error(e)
+    if (!body.task) {
+      alert("Task can not be empty!");
+      setEdit(false);
+      getItems();
+      return;
+    } else {
+      try {
+        const editTask = await axios.patch('https://magisk-todo-backend.herokuapp.com/edit', body);
+      } catch (e) {
+        console.error(e)
+      }
     }
-    console.log(body);
+
     setEdit(false);
     setInputList("");
     getItems();
@@ -114,7 +125,8 @@ const App = () => {
               })}
             </ol></div>)}
           {edit && (
-            <div className="todo_style"><input
+            <div className="editForm"><input
+              className= "editTodo"
               type="text"
               value={inputList}
               placeholder="Enter your task..."
@@ -130,6 +142,7 @@ const App = () => {
                   setInputList("")
                 }}
               />
+
             </div>)}
         </div>
       </div>
