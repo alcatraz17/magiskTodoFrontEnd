@@ -169,7 +169,40 @@ ol li {
 
 @media (max-width: 786px) {
   .center_div {
-    width: 55%;
+    width: 90%;
+    height: 90vh;
+  }
+
+  .todo_style .fa-times {
+    margin: 0 15px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    margin-left: 5px;
+    min-height: 40px;
+    width: 40px;
+    color: whitesmoke;
+    font-size: 30px;
+  }
+
+  .editForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-left: 50px;
+  }
+}
+
+
+/* 
+@media (max-height: 786px) {
+  .center_div {
+    width: 70%;
+    height: 100vh;
   }
 
   .todo_style .fa-times {
@@ -187,3 +220,4 @@ ol li {
     font-size: 30px;
   }
 }
+ */
